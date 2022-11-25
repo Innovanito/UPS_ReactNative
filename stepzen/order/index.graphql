@@ -1,0 +1,19 @@
+type Order {
+  carrier: String
+  createdAt: Date
+  shippingCost: Int
+  trackingId: String
+  Address: String
+  City: String
+  Lat: Float
+  Lng: Float
+  # TrackingItems
+}
+
+
+type Query {
+  getOrders: JSON
+    @rest(
+      endpoint: "https://ups-react-native-db4bb-default-rtdb.asia-southeast1.firebasedatabase.app/orders.json"
+    )
+}

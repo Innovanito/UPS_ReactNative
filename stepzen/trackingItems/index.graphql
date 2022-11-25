@@ -1,0 +1,17 @@
+type Items {
+  item_id: Int
+  name: String
+  price: Float
+  quantity: Int
+}
+type TrackingItemsList {
+  customer_id: String
+  items: [Items]
+}
+
+type Query {
+  getTrackingItemById(id: ID!): TrackingItemsList
+    @rest(
+      endpoint: "https://ups-react-native-db4bb-default-rtdb.asia-southeast1.firebasedatabase.app/trackingItems/$id.json"
+    )
+}
