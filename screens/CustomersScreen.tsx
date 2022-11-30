@@ -1,6 +1,6 @@
 import { View, Text, SafeAreaView,ScrollView, ActivityIndicator } from 'react-native'
 import React, { useLayoutEffect, useState } from 'react'
-import {useTailwind} from 'tailwind-rn/dist';
+// import {useTailwind} from 'tailwind-rn';
 import { CompositeNavigationProp,useNavigation } from '@react-navigation/native';
 import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 import { TabStackParamList } from '../navigator/TabNavigator';
@@ -16,7 +16,7 @@ export type CustomerScreenNavigationProp = CompositeNavigationProp<
   >
 
 const CustomersScreen = () => {
-  const tw = useTailwind();
+  // const tw = useTailwind();
   const navigation = useNavigation<CustomerScreenNavigationProp>()
   const [input, setInput] = useState<string>("")
 
@@ -30,7 +30,7 @@ const CustomersScreen = () => {
     <ScrollView style={{backgroundColor: '#59C1CC'}}>
       <Image
         source={{ uri: 'https://links.papareact.com/3jc'}}
-        containerStyle={tw("h-64 w-full")}
+        // containerStyle={tw("h-64 w-full")}
         PlaceholderContent={<ActivityIndicator/>}
       />
 
@@ -38,7 +38,7 @@ const CustomersScreen = () => {
         placeholder='Search by Customer'
         value={input}
         onChangeText={setInput}
-        containerStyle={tw('bg-white pt-5 pb-0 px-10')}
+        // containerStyle={tw('bg-white pt-5 pb-0 px-10')}
       />
     </ScrollView>
   )
